@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Page</title>
+  </head>
+  <body>
+    <div id="container">
+      <header class="checkout-heading">
+        <h1 class="page-title">Checkout</h1>
+      </header>
+      <main class="checkout-content">
+        <div class="user-registration">
+          <form action="" class="user-registration-form">
+            <div class="form-section">
+              <div class="section-heading">
+                <h1 class="section-title">Contact information</h1>
+              </div>
+              <div class="section-fields">
+                <div class="form-field">
+                  <label for="email" class="field-name">Email</label>
+                  <input type="text" class="field-input" id="email" />
+                </div>
+                <div class="form-field">
+                  <label for="phone" class="field-name">Phone</label>
+                  <input type="number" class="field-input" id="phone" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="section-heading">
+                <h1 class="section-title">Shipping address</h1>
+              </div>
+              <div class="section-fields">
+                <div class="form-field">
+                  <label for="full-name" class="field-name">Full name</label>
+                  <input type="text" class="field-input" id="full-name" />
+                </div>
+                <div class="form-field">
+                  <label for="address" class="field-name">Address</label>
+                  <input type="text" class="field-input" id="address" placeholder="Your address..." />
+                </div>
+                <div class="form-field">
+                  <label for="city" class="field-name">City</label>
+                  <input type="text" class="field-input" id="city" placeholder="Your city..." />
+                </div>
+                <div class="international-fields">
+                  <div class="form-field">
+                    <label for="country-list" class="field-name">Country</label>
+                    <select name="countryList" id="country-list" class="field-input">
+                      <option value="US">United States</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="JP">Japan</option>
+                      <option value="FR">France</option>
+                      <option value="DE">Germany</option>
+                    </select>
+                    <div class="form-field">
+                      <label for="postal-code" class="field-name">Postal Code</label>
+                      <input type="text" class="field-input" id="postal-code" placeholder="Your postal code..." />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-footer">
+                <div class="save-zone">
+                  <input type="checkbox" id="save-summary-checkbox" value="accept" />
+                  <label for="save-summary-checkbox">Save this information for next time</label>
+                </div>
+                <button class="submit-button">Continue</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="articles-lists">
+          <div class="article-for-sale">
+            <img src="/images/photo1.png" alt="backpack" class="article-photo" />
+            <div class="article-content">
+              <div class="article-description">
+                <h1 class="article-name">Vintage Backbag</h1>
+                <div class="article-prices">
+                  <p class="new-price">$54.99</p>
+                  <p class="prev-price">$94.99</p>
+                </div>
+              </div>
+              <div class="units-selector">
+                <button class="unit-button-selector">-</button>
+                <p class="unit-value">1</p>
+                <button class="unit-button-selector">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-for-sale">
+            <img src="/images/photo2.png" alt="shoes" class="article-photo" />
+            <div class="article-content">
+              <div class="article-description">
+                <h1 class="article-name">Levi Shoes</h1>
+                <div class="article-prices">
+                  <p class="new-price">$74.99</p>
+                  <p class="prev-price">$124.99</p>
+                </div>
+              </div>
+              <div class="units-selector">
+                <button class="unit-button-selector">-</button>
+                <p class="unit-value">1</p>
+                <button class="unit-button-selector">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="purchase-summary">
+            <div class="purchase-summary-item">
+              <h1 class="purchase-key">Shipping</h1>
+              <p class="purchase-value">19</p>
+            </div>
+            <div class="purchase-summary-item">
+              <h1 class="purchase-key">Total</h1>
+              <p class="purchase-value">$148.88</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>Created by <a href="">andressalazard</a> - DevChallenges.io</p>
+      </footer>
+    </div>
+  </body>
+</html>
