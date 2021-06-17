@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+footer {
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #18a0fb;
+  font-weight: bold;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]:focus {
+  outline: none;
+}
+
+.units-selector > input[type="number"]:focus {
+  border-color: #f2994a;
+}
+
+#container {
+  margin: 40px;
+  display: block;
+}
+
+.checkout-heading {
+  margin: 0;
+  color: #4e5150;
+  margin-bottom: 1.25rem;
+}
+
+.page-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 2.25rem;
+}
+
+.checkout-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.articles-list {
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  padding: 1.5rem;
+
+  width: 80%;
+}
+
+.article-for-sale {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.article-photo {
+  width: 40%;
+  height: 40%;
+  border-radius: 1.25rem;
+}
+
+.article-content {
+  display: block;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.article-description {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.article-name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #4e5150;
+  margin-bottom: 0.4rem;
+}
+
+.article-prices {
+  display: flex;
+  margin-left: 0.5rem;
+  margin-right: 3.25rem;
+  justify-content: space-between;
+}
+
+.new-price {
+  font-size: 1rem;
+  color: #f2994a;
+  font-weight: bold;
+  margin: 0;
+}
+
+.prev-price {
+  font-size: 0.75rem;
+  text-decoration: line-through;
+  margin: 0;
+}
+
+.units-selector {
+  display: flex;
+  border: 1px solid #828282;
+  border-radius: 1.125rem;
+  padding: 1.125rem;
+}
+
+.unit-counter {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  text-align: center;
+}
