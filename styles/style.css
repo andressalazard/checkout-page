@@ -15,6 +15,8 @@ body {
 }
 
 footer {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -185,8 +187,16 @@ input[type="number"]:focus {
   margin: 1rem;
 }
 
+.purchase-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .purchase-value {
-  margin: 1rem;
+  /* margin: 1rem; */
+  border: none;
+  width: 30%;
+  text-align: end;
 }
 
 .user-registration {
@@ -306,4 +316,54 @@ input[type="number"]:focus {
   padding: 18px 45px;
   border-radius: 12px;
   float: right;
+}
+
+.articles-shipping-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  #container {
+    margin: 1rem;
+  }
+
+  .checkout-heading {
+    margin-top: 1.25rem;
+  }
+
+  .checkout-form {
+    display: block;
+  }
+
+  .user-registration {
+    margin: 0;
+  }
+
+  .form-section:first-child {
+    margin-bottom: 2rem;
+  }
+
+  .articles-shipping {
+    display: none;
+  }
+
+  .articles-shipping-mobile {
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    padding: 1.5rem;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .articles-list {
+    margin-bottom: 6rem;
+  }
+
+  .article-prices {
+    margin-right: 5.8rem;
+  }
+
+  footer {
+    margin-top: 7rem;
+  }
 }

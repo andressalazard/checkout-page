@@ -12,7 +12,71 @@
       <header class="checkout-heading">
         <h1 class="page-title">Checkout</h1>
       </header>
-      <form action="" class="checkout-form">
+      <form class="checkout-form" id="checkout-form">
+        <div class="articles-shipping-mobile">
+          <div class="articles-list">
+            <div class="article-for-sale">
+              <img src="/images/photo1.png" alt="backpack" class="article-photo" />
+              <div class="article-content">
+                <div class="article-description">
+                  <h1 class="article-name">Vintage Backbag</h1>
+                  <div class="article-prices">
+                    <p class="new-price">$54.99</p>
+                    <p class="prev-price">$94.99</p>
+                  </div>
+                </div>
+                <div class="units-selector">
+                  <button class="unit-button-selector" onclick="removeUnitsFirstArticle()">
+                    <span class="material-icons md-16">remove</span>
+                  </button>
+                  <input type="number" class="unit-counter" min="1" max="10" value="4" id="article-units-1" disabled />
+                  <button class="unit-button-selector" onclick="addUnitsFirstArticle()">
+                    <span class="material-icons md-16"> add </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-for-sale">
+              <img src="/images/photo2.png" alt="shoes" class="article-photo" />
+              <div class="article-content">
+                <div class="article-description">
+                  <h1 class="article-name">Levi Shoes</h1>
+                  <div class="article-prices">
+                    <p class="new-price">$74.99</p>
+                    <p class="prev-price">$124.99</p>
+                  </div>
+                </div>
+                <div class="units-selector">
+                  <button class="unit-button-selector" onclick="removeUnitsSecondArticle()">
+                    <span class="material-icons md-16">remove</span>
+                  </button>
+                  <input type="number" class="unit-counter" min="1" max="10" value="1" id="article-units-2" disabled />
+                  <button class="unit-button-selector" onclick="addUnitsSecondArticle()">
+                    <span class="material-icons md-16">add</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="purchase-summary">
+            <div class="purchase-summary-item">
+              <label for="shipping-cost" class="purchase-key">Shipping</label>
+              <div class="purchase-container">
+                <span class="material-icons"> attach_money </span>
+                <input class="purchase-value" type="number" id="shipping-cost" disabled value="19.00" />
+              </div>
+            </div>
+            <div class="purchase-summary-item">
+              <label for="total-cost" class="purchase-key">Total</label>
+              <div class="purchase-container">
+                <span class="material-icons"> attach_money </span>
+                <input class="purchase-value" type="number" id="total-cost" disabled value="0.00" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="user-registration">
           <!-- first-section -->
           <div class="form-section">
@@ -24,14 +88,20 @@
                 <label for="email" class="field-name">E-mail</label>
                 <div class="field-input">
                   <span class="material-icons input-icon"> email </span>
-                  <input type="text" id="email" placeholder="Enter your email..." />
+                  <input
+                    required
+                    type="text"
+                    id="email"
+                    placeholder="Enter your email..."
+                    pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                  />
                 </div>
               </div>
               <div class="form-field">
                 <label for="phone" class="field-name">Phone</label>
                 <div class="field-input">
                   <span class="material-icons"> phone </span>
-                  <input type="number" id="phone" placeholder="Enter your phone..." />
+                  <input required type="number" id="phone" placeholder="Enter your phone..." />
                 </div>
               </div>
             </div>
@@ -46,21 +116,42 @@
                 <label for="full-name" class="field-name">Full name</label>
                 <div class="field-input">
                   <span class="material-icons"> account_circle </span>
-                  <input type="text" id="full-name" placeholder="Rodney Cotton" />
+                  <input
+                    required
+                    type="text"
+                    id="full-name"
+                    placeholder="Rodney Cotton"
+                    pattern="^[A-Za-z]+\s[A-Za-z]+\s?([A-Za-z]+)?$"
+                    title="Example Name: John Doe Smith"
+                  />
                 </div>
               </div>
               <div class="form-field">
                 <label for="address" class="field-name">Address</label>
                 <div class="field-input">
                   <span class="material-icons"> home </span>
-                  <input type="text" id="address" placeholder="Your address..." />
+                  <input
+                    required
+                    type="text"
+                    id="address"
+                    placeholder="Your address..."
+                    pattern="^[A-Za-z]+((\s?([A-Za-z]*|\d*)?)*)?$"
+                    title="Example address: Negra Arroyo Lane 308"
+                  />
                 </div>
               </div>
               <div class="form-field">
                 <label for="city" class="field-name">City</label>
                 <div class="field-input">
                   <span class="material-icons"> location_city </span>
-                  <input type="text" id="city" placeholder="Your city..." />
+                  <input
+                    required
+                    type="text"
+                    id="city"
+                    placeholder="Your city..."
+                    pattern="^[A-Za-z]*(\s?[A-Za-z]*)?$"
+                    title="Example city: Chicago"
+                  />
                 </div>
               </div>
               <div class="international-fields">
@@ -82,7 +173,16 @@
                   <label for="postal-code" class="field-name">Postal Code</label>
                   <div class="field-input">
                     <span class="material-icons"> markunread_mailbox </span>
-                    <input type="text" id="postal-code" placeholder="Your postal code..." />
+                    <input
+                      required
+                      type="text"
+                      id="postal-code"
+                      minlength="6"
+                      maxlength="10"
+                      placeholder="Your postal code..."
+                      pattern="^[A-Za-z]{3,6}\s\d+$"
+                      title="Postal Code format: AAA 999"
+                    />
                   </div>
                 </div>
               </div>
@@ -93,7 +193,7 @@
               <input type="checkbox" id="save-summary-checkbox" value="accept" />
               <label for="save-summary-checkbox">Save this information for next time</label>
             </div>
-            <button class="submit-button">Continue</button>
+            <button type="submit" name="submit-button" class="submit-button" onclick="validateForm()">Continue</button>
           </div>
         </div>
 
@@ -110,11 +210,11 @@
                   </div>
                 </div>
                 <div class="units-selector">
-                  <button class="unit-button-selector">
+                  <button class="unit-button-selector" name="remove-button-1" onclick="removeUnitsFirstArticle()">
                     <span class="material-icons md-16">remove</span>
                   </button>
-                  <input type="number" class="unit-counter" min="1" placeholder="1" />
-                  <button class="unit-button-selector">
+                  <input type="number" class="unit-counter" min="1" max="10" value="4" id="article-units-1" disabled />
+                  <button class="unit-button-selector" name="add-button-1" onclick="addUnitsFirstArticle()">
                     <span class="material-icons md-16"> add </span>
                   </button>
                 </div>
@@ -132,11 +232,11 @@
                   </div>
                 </div>
                 <div class="units-selector">
-                  <button class="unit-button-selector">
+                  <button class="unit-button-selector" name="remove-button-2" onclick="removeUnitsSecondArticle()">
                     <span class="material-icons md-16">remove</span>
                   </button>
-                  <input type="number" class="unit-counter" min="1" placeholder="1" />
-                  <button class="unit-button-selector">
+                  <input type="number" class="unit-counter" min="1" max="10" value="1" id="article-units-2" disabled />
+                  <button class="unit-button-selector" name="add-button-2" onclick="addUnitsSecondArticle()">
                     <span class="material-icons md-16">add</span>
                   </button>
                 </div>
@@ -145,12 +245,18 @@
           </div>
           <div class="purchase-summary">
             <div class="purchase-summary-item">
-              <h1 class="purchase-key">Shipping</h1>
-              <p class="purchase-value">19</p>
+              <label for="shipping-cost" class="purchase-key">Shipping</label>
+              <div class="purchase-container">
+                <span class="material-icons"> attach_money </span>
+                <input class="purchase-value" type="number" id="shipping-cost" disabled value="19.00" />
+              </div>
             </div>
             <div class="purchase-summary-item">
-              <h1 class="purchase-key">Total</h1>
-              <p class="purchase-value">$148.88</p>
+              <label for="total-cost" class="purchase-key">Total</label>
+              <div class="purchase-container">
+                <span class="material-icons"> attach_money </span>
+                <input class="purchase-value" type="number" id="total-cost" disabled value="0.00" />
+              </div>
             </div>
           </div>
         </div>
@@ -160,4 +266,62 @@
       </footer>
     </div>
   </body>
+
+  <script>
+    var productPrices = {
+      vintageBackbag: {
+        prevPrice: 94.99,
+        newPrice: 54.99,
+      },
+      leviShoes: {
+        prevPrice: 124.99,
+        newPrice: 74.99,
+      },
+    };
+
+    function addUnitsFirstArticle() {
+      var element = document.getElementById("article-units-1");
+      if (parseInt(element.value) < parseInt(element.max)) element.value = parseInt(element.value) + 1;
+
+      estimateTotalCost();
+    }
+
+    function removeUnitsFirstArticle() {
+      var element = document.getElementById("article-units-1");
+      if (parseInt(element.value) > parseInt(element.min)) element.value = parseInt(element.value) - 1;
+
+      estimateTotalCost();
+    }
+
+    function addUnitsSecondArticle() {
+      var element = document.getElementById("article-units-2");
+      if (parseInt(element.value) < parseInt(element.max)) element.value = parseInt(element.value) + 1;
+
+      estimateTotalCost();
+    }
+
+    function removeUnitsSecondArticle() {
+      var element = document.getElementById("article-units-2");
+      if (parseInt(element.value) > parseInt(element.min)) element.value = parseInt(element.value) - 1;
+
+      estimateTotalCost();
+    }
+
+    function estimateTotalCost() {
+      var totalCostElement = document.getElementById("total-cost"),
+        backbagTotalUnits = parseInt(document.getElementById("article-units-1").value),
+        shoesTotalUnits = parseInt(document.getElementById("article-units-2").value),
+        shippingCost = parseInt(document.getElementById("shipping-cost").value),
+        backbagTotalCost = backbagTotalUnits * productPrices.vintageBackbag.newPrice,
+        shoesTotalCost = shoesTotalUnits * productPrices.leviShoes.newPrice;
+      totalCostElement.value = (backbagTotalCost + shoesTotalCost + shippingCost).toFixed(2);
+    }
+
+    function validateForm() {
+      document.forms["checkout-form"].addEventListener("submit", () => {
+        console.log(document.forms["checkout-form"].reportValidity());
+        if (document.forms["checkout-form"].reportValidity()) alert("Validation Successful!!");
+      });
+    }
+  </script>
 </html>
